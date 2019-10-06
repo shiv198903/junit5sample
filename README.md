@@ -54,4 +54,9 @@ When we have more that one assertion to be made for a single test we can use it.
 @Tag: Used to run/skip selected methods that are tagged with the same name as that provided at runtime.
 
 TestInfo and TestReporter are the interfaces that has the details of the methods/class of the test classes and 
-reporter is interface used to report the messages to the console/html or whatever output the information is streamed to.  
+reporter is interface used to report the messages to the console/html or whatever output the information is streamed to.
+
+To import and run the test perform below steps in order. 
+	clone the repository.
+	run mvnw.cmd to run maven wrapper. Downloads the maven wrapper if already not present.
+	mvn test (this command runs the test)
