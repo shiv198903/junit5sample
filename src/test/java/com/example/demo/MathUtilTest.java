@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -79,6 +80,23 @@ class MathUtilTest {
 				() -> assertEquals(4, mathUtil.divide(8, 2)),
 				() -> assertEquals(4, mathUtil.multiply(2, 2))
 				);
+	}
+	
+	@Nested
+	@DisplayName("Add Group")
+	class GroupedAddTest{
+		@Test
+		@DisplayName("Testing positive add method")
+		void testPositiveAdd() {
+			assertEquals(2, mathUtil.add(1, 1), "Should return correct sum.");
+		}
+		
+		@Test
+		@DisplayName("Testing negetive add method")
+		void testNegetiveAdd() {
+			assertEquals(-2, mathUtil.add(-1, -1), "Should return correct sum.");
+		}
+		
 	}
 
 

@@ -48,3 +48,5 @@ Assumptions are similar to assertions that they give programmatic control to ena
 
 AssertAll
 When we have more that one assertion to be made for a single test we can use it.
+
+@Nested is used to group certain tests where the output of test is passed only when all the nested tests are passed.
