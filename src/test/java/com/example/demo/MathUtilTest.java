@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -30,7 +31,7 @@ class MathUtilTest {
 		mathUtil = new MathUtil();
 	}
 
-	@Test
+	@RepeatedTest(value = 3)
 	@DisplayName("Testing add method")
 	void testAdd() {
 		assertEquals(2, mathUtil.add(1, 1), "Should return correct sum.");
