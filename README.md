@@ -34,3 +34,14 @@ Junit provides hooks which can be used to execute the code before the entire tes
 @BeforeEach - Called before execution of each test.
 @AfterEach - Called after execution of each test.
 @AfterAll - Called after the execution of all the tests in the particular class.Should be static.
+
+Conditional Execution
+@EnabledIf
+@EnabledIfEnvironmentVariable
+@EnabledIfSystemProperty
+@EnabledOnJre
+@EnabledOnJre
+Above annotations help us enable/disable the tests basedon some conditions. When the condition is not met the tests are disabled/skipped.
+
+Assumptions
+Assumptions are similar to assertions that they give programmatic control to enable/disable the test execution.
