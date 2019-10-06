@@ -12,8 +12,10 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestInfo;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
+import org.junit.jupiter.api.TestReporter;
 import org.junit.jupiter.api.condition.EnabledOnOs;
 import org.junit.jupiter.api.condition.OS;
 
@@ -26,9 +28,13 @@ is not constant.*/
 class MathUtilTest {
 
 	private MathUtil mathUtil;
+	private TestInfo testInfo;
+	private TestReporter testReporter;
 
 	@BeforeEach
-	void initMathUtil() {
+	void initMathUtil(TestInfo testInfo, TestReporter testReporter) {
+		this.testInfo = testInfo;
+		this.testReporter = testReporter;
 		mathUtil = new MathUtil();
 	}
 
@@ -36,6 +42,7 @@ class MathUtilTest {
 	@DisplayName("Testing add method")
 	@Tag("Add")
 	void testAdd() {
+		testReporter.publishEntry("Running "+testInfo.getTestMethod());
 		assertEquals(2, mathUtil.add(1, 1), "Should return correct sum.");
 	}
 
@@ -58,6 +65,7 @@ class MathUtilTest {
 	@Disabled
 	@DisplayName("Testing substract method")
 	void testSubstract() {
+		testReporter.publishEntry("Running "+testInfo.getTestMethod());
 		assertEquals(1, mathUtil.substract(2, 1), "Should return correct substract.");
 	}
 	
@@ -71,12 +79,14 @@ class MathUtilTest {
 	@DisplayName("Testing multiply method")
 	void testMultiply() {
 		Assumptions.assumeTrue(false);
+		testReporter.publishEntry("Running "+testInfo.getTestMethod());
 		assertEquals(9, mathUtil.multiply(3, 3), "Should return correct multiply.");
 	}
 	
 	@Test
 	@DisplayName("Testing all MathUtil operations in one test")
 	void testAllOperations() {
+		testReporter.publishEntry("Running "+testInfo.getTestMethod());
 		Assertions.assertAll(
 				() -> assertEquals(4, mathUtil.add(2, 2)),
 				() -> assertEquals(4, mathUtil.substract(6, 2)),

@@ -6,7 +6,7 @@ https://www.youtube.com/playlist?list=PLqq-6Pq4lTTa4ad5JISViSb2FVG8Vwa4o
 Below are the notes made during the tutorial.
 
 Junit4 is around 10 years old. Not updated a lot of language features. Like lambdas, etc. Had a monolithic architecture.
-Junit5 has a different architecture compared to Junit4.
+Junit5 has a different architecture compared to Junit4 and also supports dependency injection.
 
 Version 5 has a below components. Each has a specific purpose and needs to be included only if there's a need for it.
 Platform - this runs the actual tests.
@@ -52,3 +52,6 @@ When we have more that one assertion to be made for a single test we can use it.
 @Nested is used to group certain tests where the output of test is passed only when all the nested tests are passed.
 
 @Tag: Used to run/skip selected methods that are tagged with the same name as that provided at runtime.
+
+TestInfo and TestReporter are the interfaces that has the details of the methods/class of the test classes and 
+reporter is interface used to report the messages to the console/html or whatever output the information is streamed to.  
