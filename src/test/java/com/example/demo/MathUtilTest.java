@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.api.TestInstance.Lifecycle;
@@ -33,6 +34,7 @@ class MathUtilTest {
 
 	@RepeatedTest(value = 3)
 	@DisplayName("Testing add method")
+	@Tag("Add")
 	void testAdd() {
 		assertEquals(2, mathUtil.add(1, 1), "Should return correct sum.");
 	}
@@ -85,6 +87,7 @@ class MathUtilTest {
 	
 	@Nested
 	@DisplayName("Add Group")
+	@Tag("Add")
 	/*
 	 * Supplying a string as an executable to the assert
 	 * function makes juint to execute it only if the test
