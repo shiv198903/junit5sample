@@ -45,3 +45,6 @@ Above annotations help us enable/disable the tests basedon some conditions. When
 
 Assumptions
 Assumptions are similar to assertions that they give programmatic control to enable/disable the test execution.
+
+AssertAll
+When we have more that one assertion to be made for a single test we can use it.

@@ -3,6 +3,7 @@ package com.example.demo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -67,6 +68,17 @@ class MathUtilTest {
 	void testMultiply() {
 		Assumptions.assumeTrue(false);
 		assertEquals(9, mathUtil.multiply(3, 3), "Should return correct multiply.");
+	}
+	
+	@Test
+	@DisplayName("Testing all MathUtil operations in one test")
+	void testAllOperations() {
+		Assertions.assertAll(
+				() -> assertEquals(4, mathUtil.add(2, 2)),
+				() -> assertEquals(4, mathUtil.substract(6, 2)),
+				() -> assertEquals(4, mathUtil.divide(8, 2)),
+				() -> assertEquals(4, mathUtil.multiply(2, 2))
+				);
 	}
 
 
