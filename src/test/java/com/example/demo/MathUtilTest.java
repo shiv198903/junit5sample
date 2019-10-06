@@ -84,11 +84,18 @@ class MathUtilTest {
 	
 	@Nested
 	@DisplayName("Add Group")
+	/*
+	 * Supplying a string as an executable to the assert
+	 * function makes juint to execute it only if the test
+	 * fails not when it is passed. This can be useful in 
+	 * cases where calculation of String might be computation
+	 * heavy.
+	 */
 	class GroupedAddTest{
 		@Test
 		@DisplayName("Testing positive add method")
 		void testPositiveAdd() {
-			assertEquals(2, mathUtil.add(1, 1), "Should return correct sum.");
+			assertEquals(2, mathUtil.add(1, 1), () -> "Should return correct sum.");
 		}
 		
 		@Test
